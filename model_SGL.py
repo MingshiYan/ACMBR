@@ -93,7 +93,7 @@ class ACMBR(nn.Module):
 
     def forward(self, batch_data):
 
-        user, p_item, n_item = torch.split(batch_data[:, 0], 1, dim=-1)
+        user, p_item, n_item = torch.split(batch_data, 1, dim=-1)
 
         all_embeddings = torch.cat([self.user_embedding.weight, self.item_embedding.weight], dim=0)
 
